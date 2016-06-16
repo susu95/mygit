@@ -1,0 +1,10 @@
+namespace java service.demo 
+//定义一个服务名为Hello
+ service Hello{
+//服务里面有五个方法，每个犯法包括返回值类型，方法名称，参数（参数序号，参数类型，参数名称）
+  string helloString(1:string para)
+  i32 helloInt(1:i32 para)
+  bool helloBoolean(1:bool para)
+  void helloVoid()
+  string helloNull()
+ }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="serviceProcessor" class="service.demo.HelloImpl"></bean>
+
+    <bean id="serverPublisher" class="com.meituan.service.mobile.mtthrift.proxy.ThriftServerPublisher" init-method="publish" destroy-method="destroy">
+        <property name="serviceInterface" value="service.demo.Hello"/> <!-- 接口类 -->
+        <property name="serviceImpl" ref="serviceProcessor"/> <!-- 实现类 -->
+        <property name="appKey" value="com.sankuai.inf.mtthrift.testServer"/>  <!-- 本地 appkey，建议重新注册一个 -->
+        <property name="port" value="9001"/> <!-- Server 监听端口 -->
+        <property name="clusterManager" value="OCTO"/> <!-- 集群工作模式 -->
+    </bean>
+
+</beans>
