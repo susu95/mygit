@@ -18,6 +18,7 @@ public class HelloImpl implements Hello.Iface {
     public boolean helloBoolean(boolean para) throws TException {
 
         System.out.println("this is a boolean return");
+        System.out.println("这里是br2修改的代码");
 
         return !para;
     }
