@@ -12,6 +12,7 @@ public class HelloImpl implements Hello.Iface {
     public int helloInt(int para) throws TException {
         System.out.println("this is a int return");
         System.out.println("这里修改代码了");
+        System.out.println("这里要stash一下");
         return para + 10;
     }
 
