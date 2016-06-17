@@ -11,7 +11,8 @@ public class HelloImpl implements Hello.Iface {
 
     public int helloInt(int para) throws TException {
         System.out.println("this is a int return");
-        return para + 1;
+        System.out.println("这里修改代码了");
+        return para + 10;
     }
 
     public boolean helloBoolean(boolean para) throws TException {
